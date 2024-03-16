@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
   res.send("running server")
 })
 // categories Fetch
-app.get("/categories", (req, res) => {
+app.get("/api/categories", (req, res) => {
   db.all("SELECT * FROM category", (err, data) => {
     console.log(data)
     if (err) {
@@ -27,7 +27,7 @@ app.get("/categories", (req, res) => {
 });
 
 //  sub_categories Fetch
-app.get("/sub_categories", (req, res) => {
+app.get("/api/sub_categories", (req, res) => {
   db.all("SELECT * FROM sub_category", (err, data) => {
     if (err) {
       console.error(err.message);
@@ -39,7 +39,7 @@ app.get("/sub_categories", (req, res) => {
 });
 
 //   duas Fetch
-app.get("/duas", (req, res) => {
+app.get("/api/duas", (req, res) => {
   db.all("SELECT * FROM dua", (err, data) => {
     if (err) {
       console.error(err.message);
