@@ -10,6 +10,9 @@ app.use(express.json())
 // database connection from "dua_main.sqlite"
 const db = new sqlite3.Database("./Database/dua_main.sqlite");
 
+app.get('/',(req,res)=>{
+  res.send("running server")
+})
 // categories Fetch
 app.get("/categories", (req, res) => {
   db.all("SELECT * FROM category", (err, data) => {
